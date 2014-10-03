@@ -1,1 +1,8 @@
-name = Smooth Scrolling
+name: 'Smooth Scrolling'
+type: module
+description: 'Applies a jQuery smooth scroll effect to specified anchor links'
+package: other
+# version: VERSION
+# core: 8.x
+dependencies:
+  - serialization

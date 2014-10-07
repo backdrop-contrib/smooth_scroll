@@ -1,0 +1,9 @@
+; $Id:
+name = Smooth Scrolling
+description = Allows the usage of jquery to scroll nicely from place to place
+core = 7.x
+configure = admin/config/user-interface/smooth_scrolling
+files[] = smooth_scrolling.module
+
+
+

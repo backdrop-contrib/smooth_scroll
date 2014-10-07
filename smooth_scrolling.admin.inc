@@ -12,11 +12,19 @@ function smooth_scrolling_admin() {
   $form = array();
 
   $form['smooth_scrolling'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Smooth scrolling settings'),
+    '#type' => 'textfield',
+    '#title' => t('Smooth scrolling speed'),
     '#default_value' => _smooth_scrolling_admin_convert_array_to_text(variable_get('smooth_scrolling', array())),
-    '#description' => t('Smooth scrolling configurations, one per line in the formation <code>[Scroll speed]|[extra settings]</code>.'),
+    '#description' => t('Smooth scrolling configurations, one per line in the formation <code>[Scroll speed]</code>.'),
   );
+
+  /* @todo We need a "setoff class for future"
+    $form['smooth_class'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Smooth scrolling class'),
+    '#default_value' => _smooth_scrolling_admin_convert_array_to_text(variable_get('smooth_class', array())),
+    '#description' => t('If you need to comply with a "floating" header and its getting far set the element here and we will calculate an automatic setoff <code>[Class here] example ".body"</code>.'),
+  );*/
 
   $form['submit'] = array(
     '#type' => 'submit',

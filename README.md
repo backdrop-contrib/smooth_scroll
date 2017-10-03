@@ -1,13 +1,19 @@
 Smooth Scroll
 ============
 
-This module is meant for One pager websites, and sitebuilders who have no
-knowledge of js or just want to build their site up quickly and use this effect.
+
+Normally, clicking hyperlinks to page anchors causes the browser to jump
+immediately to the destination anchor. This module uses JQuery to add a smooth
+easing animation instead of this sudden jump.
+
+This module is therefore perfect for "one-page" websites.
 
 By using the Smooth Scroll module the effect is applied to all anchor links
 on your Backdrop site.
 
-You can set the configurations for the module in 
+See example at [http://css-tricks.com/snippets/jquery/smooth-scrolling/](http://css-tricks.com/snippets/jquery/smooth-scrolling/)
+
+You can set the speed of the scroll animation at 
 `config/user-interface/smooth-scrolling`.
 
 Installation

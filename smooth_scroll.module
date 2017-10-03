@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * The smooth_scroll module allows animation of scrolling to destination page 
+ * elements and anchors after clicking hyperlinks.
+ */
+
+/**
+ * Implements hook_config_info().
+ */
+function smooth_scroll_config_info() {
+  $prefixes['smooth_scroll.settings'] = array(
+    'label' => t('Smooth scroll settings'),
+    'group' => t('Configuration'),
+  );
+}
+
+/**
+ * Implements hook_init(). */
+function smooth_scroll_init() {
+  $smooth_scroll_speed = config_get('smooth_scroll.settings', 'smooth_scroll_speed');
+
+  backdrop_add_js(array('scrollSpeed' => $smooth_scroll_speed), array('type' => 'setting', 'scope' => JS_DEFAULT));
+  backdrop_add_js(backdrop_get_path('module', 'smooth_scroll') . '/smooth_scroll.js');
+}
+
+/**
+ * Implements hook_menu(). */
+function smooth_scroll_menu() {
+  $items = array();
+  $items['admin/config/user-interface/smooth-scroll'] = array(
+    'title' => 'Smooth scroll',
+    'description' => 'Configure smooth scroll.',
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'backdrop_get_form',
+    'page arguments' => array('smooth_scroll_admin'),
+    'file' => 'smooth_scroll.admin.inc',
+  );
+  return $items;
+}

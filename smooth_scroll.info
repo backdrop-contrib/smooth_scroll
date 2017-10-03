@@ -1,0 +1,8 @@
+name = Smooth Scroll
+description =  Smooth page scrolling to destination page elements and anchors after clicking hyperlinks.
+backdrop = 1.x
+type = module
+configure = admin/config/user-interface/smooth_scroll
+package = Other
+php = 5.2
+
